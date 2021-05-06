@@ -46,7 +46,7 @@ if (lowerCasePlace === 'yes' || lowerCasePlace === 'y') {
   alert('BRRRT! Incorrect. Wisconsin is my home state.');
 }
 else if (lowerCasePlace === 'no' || lowerCasePlace === 'n') {
-  alert('Correct,' + userName + '!');
+  alert('Correct,' + userName + '! I am from Wisconsin.');
 }
 //console.log('Did I grow up in WA?', placeQuestion, userName);
 
@@ -90,40 +90,48 @@ else if (lowerCaseDive === 'no' || lowerCaseDive === 'n') {
 //console.log('Have I ever been skydiving?', skyDive);
 
 
-// make a list of favorite games. 5 guesses to get the answer.  If user guesses correctly, tell them they are correct and end the chances to guess. incorrect guess let them know in a prompt to guess again.
-// check all games in the array. let them know if they match then end guesses. no match tell them they didn't get it and ask them to guess again.
+//Question 7 - favorite number, 6 guesses
 
-// needs
-//list of movies (array)
-// a variable set to a number of guesses
-// a flag for when they get it right
+let favNum = 7;
+
+for (let i = 0; i < 6; i++) {
+  alert('This many guesses left' + (6-i));
+  let numGuessString = prompt('What is my favorite number?');
+  let numGuess = parseInt(numGuessString);
+  if (numGuess === favNum ) {
+    alert('That is correct!');
+    break;
+  }
+  // check if numguess and favnum are the same, if same, correct. stop loop, with break.
+  else if (numGuess > favNum) {
+    alert('Too High! Try again!');
+  }
+  else if (numGuess < favNum) {
+    alert ('BRRRT! Too low! Try again!');
+  }
+}
+// make a list of favorite games. 6 guesses to get the answer.  If user guesses correctly, tell them they are correct and end the chances to guess. incorrect guess let them know in a prompt to guess again.
+// check all games in the array. let them know if they match then end guesses. no match tell them they didn't get it and ask them to guess again.
 
 let favGames = ['halo','minecraft','mortal kombat','rockband','plants vs zombies','borderlands', 'super mario 3'];
 
 let counter = 6;
 let rightAnswer = false;
 while (rightAnswer === false && counter > 0) {
-  alert(counter + 'guesses left');
-}
-
-
-let userGuess = prompt('Guess a videogame that I have been addicted to');
-for(let i = 0; i < favGames.length; i++) {
-  if (userGuess === favGames[i]) {
-    alert('That is correct!');
-    rightAnswer = true;
+  alert(counter + ' guesses left');
+  let userGuess = prompt('Guess a videogame that I have been addicted to');
+  for (let i = 0; i < favGames.length; i++) {
+    if (userGuess === favGames[i]) {
+      alert('That is correct!');
+      rightAnswer = true;
+    }
   }
+  if (rightAnswer === false) {
+    alert('BRRRRT! Guess again!');
+  }
+  counter --;
 }
 
-if (rightAnswer === false) {
-  alert('BRRRRT! Guess again!');
-}
-
-
-/////
-
-//let myNum = 7;
-
-//for (let i = 0; i < 5; i++) {
-  //alert('This many guesses left')
-//}
+/// As a user, I would like to know my final score so that I can know how well I did.
+//Keep track of the total number of correct answers.
+//At the end tell them how many they got correct out of the 7 questions asked.
