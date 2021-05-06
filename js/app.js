@@ -10,55 +10,64 @@ alert('Welcome, ' + userName + '. To pass you must answer these questions about 
 
 
 // Question 1
-let waterDrink = prompt('..but first..' + userName + '.. Have you drank water today?');
-let lowerCaseWater = waterDrink.toLowerCase();
+function questionOne() {
+  let waterDrink = prompt('..but first..' + userName + '.. Have you drank water today?');
 
-if (lowerCaseWater === 'yes' || lowerCaseWater === 'y') {
-  alert('Staying hydrated, ' + userName + ' . Great! Now let\'s begin.');
-}
-else if (lowerCaseWater === 'no' || lowerCaseWater === 'n') {
-  alert('Time to hydrate yourself!');
-}
-else {
-  alert('water=life');
+  waterDrink = waterDrink.toLowerCase();
+
+  if (waterDrink === 'yes' || waterDrink === 'y') {
+    alert('Staying hydrated, ' + userName + ' . Great! Now let\'s begin.');
+  }
+  else if (waterDrink === 'no' || waterDrink === 'n') {
+    alert('Time to hydrate yourself!');
+  }
+  else {
+    alert('water=life');
+  }
 }
 //console.log(lowerCaseWater, userName);
-
-
 // Question 2
-let catQuestion = prompt('Do I have a cat?');
-let lowerCaseCat = catQuestion.toLowerCase();
 
-if (lowerCaseCat === 'yes' || lowerCaseCat === 'y') {
-  alert('Actually\, ' + userName + ' , I have two cats!');
+function questionTwo() {
+  let catQuestion = prompt('Do I have a cat?');
+  catQuestion = catQuestion.toLowerCase();
+
+  if (catQuestion === 'yes' || catQuestion === 'y') {
+    alert('Actually ,' + userName + ' , I have two cats!');
+    return true;
+  }
+  else if (catQuestion === 'no' || catQuestion === 'n') {
+    alert('You are sort of correct, I have TWO cats.');
+    return false;
+  }
 }
-else if (lowerCaseCat === 'no' || lowerCaseCat === 'n') {
-  alert('You are sort of correct, I have TWO cats.');
-}
+
 //console.log('do I have a cat?', catQuestion, userName,);
 
 
 //Question 3
-let placeQuestion = prompt('Did I grow up in Washington state?');
-let lowerCasePlace = placeQuestion.toLowerCase();
+function questionThree() {
+  let placeQuestion = prompt('Did I grow up in Washington state?');
+  placeQuestion = placeQuestion.toLowerCase();
 
-if (lowerCasePlace === 'yes' || lowerCasePlace === 'y') {
-  alert('BRRRT! Incorrect. Wisconsin is my home state.');
-}
-else if (lowerCasePlace === 'no' || lowerCasePlace === 'n') {
-  alert('Correct,' + userName + '! I am from Wisconsin.');
+  if (placeQuestion === 'yes' || placeQuestion === 'y') {
+    alert('BRRRT! Incorrect. Wisconsin is my home state.');
+  }
+  else if (placeQuestion === 'no' || placeQuestion === 'n') {
+    alert('Correct,' + userName + '! I am from Wisconsin.');
+  }
 }
 //console.log('Did I grow up in WA?', placeQuestion, userName);
 
 
 // Question 4
 let swimQuestion = prompt('Do I know how to swim?');
-let lowerCaseSwim = swimQuestion.toLowerCase();
+swimQuestion = swimQuestion.toLowerCase();
 
-if (lowerCaseSwim === 'yes' || lowerCaseSwim === 'y') {
+if (swimQuestion== 'yes' || swimQuestion === 'y') {
   alert('Yes, I love swimming! Lakes and rivers especially.' + userName + ', let me know if you have any swim spots!');
 }
-else if (lowerCaseSwim === 'no' || lowerCaseSwim === 'n') {
+else if (swimQuestion === 'no' || swimQuestion === 'n') {
   alert('BRRRT! Incorrect. I love swimming in lakes and rivers especially.' + userName + ', let me know if you have any swim spots!');
 }
 //console.log('Do I know how to swim?', swimQuestion, userName);
