@@ -6,13 +6,12 @@ if (!userName) {
   userName = 'weary traveler';
 }
 alert('Welcome, ' + userName + '. To pass you must answer these questions about me!');
-//console.log('name of user is', userName);
+console.log('name of user is', userName);
 
 
 // Question 1
 function questionOne() {
   let waterDrink = prompt('..but first..' + userName + '.. Have you drank water today?');
-
   waterDrink = waterDrink.toLowerCase();
 
   if (waterDrink === 'yes' || waterDrink === 'y') {
@@ -28,9 +27,9 @@ function questionOne() {
     return false;
   }
 }
-//console.log(lowerCaseWater, userName);
-// Question 2
+console.log(lowerCaseWater, userName);
 
+// Question 2
 function questionTwo() {
   let catQuestion = prompt('Do I have a cat?');
   catQuestion = catQuestion.toLowerCase();
@@ -45,7 +44,7 @@ function questionTwo() {
   }
 }
 
-//console.log('do I have a cat?', catQuestion, userName,);
+console.log('do I have a cat?', catQuestion, userName);
 
 
 //Question 3
@@ -62,7 +61,7 @@ function questionThree() {
     return false;
   }
 }
-//console.log('Did I grow up in WA?', placeQuestion, userName);
+console.log('Did I grow up in WA?', placeQuestion, userName);
 
 
 // Question 4
@@ -79,7 +78,7 @@ function questionFour() {
     return false;
   }
 }
-//console.log('Do I know how to swim?', swimQuestion, userName);
+console.log('Do I know how to swim?', swimQuestion, userName);
 
 
 //Question 5
@@ -96,7 +95,7 @@ function questionFive() {
     return false;
   }
 }
-//console.log('Have I ever been on a zip line?', zipQuestion);
+console.log('Have I ever been on a zip line?', zipQuestion);
 
 
 //Question 6
@@ -113,7 +112,7 @@ function questionSix() {
     return false;
   }
 }
-//console.log('Have I ever been skydiving?', skyDive);
+console.log('Have I ever been skydiving?', skyDive);
 
 questionOne();
 questionTwo();
@@ -124,7 +123,7 @@ questionSix();
 
 //Question 7 - favorite number, 6 guesses
 
-function numQuestion() { 
+function numQuestion() {
   let favNum = 7;
 
   for (let i = 0; i < 6; i++) {
@@ -140,7 +139,7 @@ function numQuestion() {
       alert('Too High! Try again!');
     }
     else if (numGuess < favNum) {
-    alert ('BRRRT! Too low! Try again!');
+      alert ('BRRRT! Too low! Try again!');
     }
   }
   alert('Sorry, the number was ' + favNum + '!');
@@ -153,13 +152,13 @@ numQuestion(); //calls the above function
 // check all games in the array. let them know if they match then end guesses. no match tell them they didn't get it and ask them to guess again.
 
 let favGames = [
-'halo',
-'minecraft',
-'mortal kombat',
-'rockband',
-'plants vs zombies',
-'borderlands',
-'super mario 3'];
+  'halo',
+  'minecraft',
+  'mortal kombat',
+  'rockband',
+  'plants vs zombies',
+  'borderlands',
+  'super mario 3'];
 
 function topTenQuestion(favGames) {
   let counter = 6;
@@ -177,12 +176,13 @@ function topTenQuestion(favGames) {
     if (rightAnswer === false) {
       alert('BRRRRT! Guess again!');
     }
-  counter--;
+    counter--;
   }
   return false;
 }
-
 topTenQuestion(favGames); //Calls the above function
+
+
 /// As a user, I would like to know my final score so that I can know how well I did.
 //Keep track of the total number of correct answers.
 //At the end tell them how many they got correct out of the 7 questions asked.
